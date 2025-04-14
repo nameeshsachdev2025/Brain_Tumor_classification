@@ -56,7 +56,7 @@ uploaded_file = st.file_uploader("", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None:
     image_display = Image.open(uploaded_file).convert('RGB')
-    st.image(image_display, caption='🖼️ Uploaded MRI', use_column_width=True)
+    st.image(image_display, caption='🖼️ Uploaded MRI', use_container_width=True)
 
     with st.spinner('🔍 Analyzing the MRI scan...'):
         time.sleep(1)
