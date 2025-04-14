@@ -31,7 +31,7 @@ class_names = ['Glioma', 'Meningioma Tumor', 'No Tumor', 'Pituitary Tumor']
 @st.cache_resource
 def load_brain_model():
     try:
-        model = load_model('Brain_tumor_Project/brain_tumor_model.keras', compile=False)
+        model = load_model('brain_tumor_model.keras', compile=False)
         model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
         return model
     except Exception as e:
