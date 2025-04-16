@@ -196,7 +196,8 @@ with col1:
     
     if uploaded_file:
         image_display = Image.open(uploaded_file).convert('RGB')
-        st.image(image_display, caption='Uploaded MRI Image', use_column_width=True)
+        st.image(image_display, caption='Uploaded MRI Image', use_container_width=True)
+
     else:
         st.markdown("""
             <div style="text-align: center; padding: 2rem; border: 2px dashed #ccc; border-radius: 8px;">
