@@ -108,5 +108,10 @@ Each subfolder contains `.jpg` or `.png` MRI images labeled according to tumor t
 - Google Colab
 - Git & GitHub
 
+## Confusion Matrix
+
+![Confusion Matrix](https://raw.githubusercontent.com/nameeshsachdev2025/Brain_Tumor_classification/main/Brain_Tumor_classification/confusion_matrix_final.png)
+
+
 
 
