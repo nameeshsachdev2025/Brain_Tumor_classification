@@ -85,6 +85,38 @@ Each subfolder contains `.jpg` or `.png` MRI images labeled according to tumor t
 - **Test Samples:** ~1,600 (approx.)
 
 ---
+## Model Architecture
+
+The model is built using a Convolutional Neural Network (CNN) designed to classify brain MRI images into four categories. The architecture includes:
+
+- **Convolutional Layers** with ReLU activation to learn spatial features
+- **MaxPooling Layers** to reduce dimensionality
+- **Dropout Layers** for regularization and overfitting control
+- **Fully Connected (Dense) Layers** for final classification
+- **Softmax Output Layer** to produce probability scores for 4 classes
+
+### Transfer Learning
+
+To enhance performance, pretrained architectures like **VGG16** and **ResNet50** were also explored. These models were fine-tuned by replacing their classification heads and training on the brain tumor dataset.
+
+### Data Augmentation
+
+To increase robustness and generalization, real-time data augmentation was applied using `ImageDataGenerator`:
+
+```python
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+datagen = ImageDataGenerator(
+    rotation_range=20,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    fill_mode='reflect'
+)
+
+train_generator = datagen.flow(x_train, y_train, batch_size=32)
+```
 ## Tech Stack
 
 **Model & Backend:**
@@ -111,6 +143,13 @@ Each subfolder contains `.jpg` or `.png` MRI images labeled according to tumor t
 ## Confusion Matrix
 
 ![Confusion Matrix](https://raw.githubusercontent.com/nameeshsachdev2025/Brain_Tumor_classification/main/Brain_Tumor_classification/confusion_matrix_final.png)
+
+
+## Acknowledgments
+
+- Dataset sources: [Figshare](https://figshare.com), SARTAJ, Br35H
+- Streamlit for easy deployment
+- TensorFlow & Keras for deep learning framework
 
 
 
